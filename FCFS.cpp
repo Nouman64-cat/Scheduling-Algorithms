@@ -11,6 +11,15 @@ struct Process {
     int burst; //burst time
 };
 
+void printTable(const vector<Process>& processes) {
+    cout << "User-Entered Table:" << endl;
+    cout << "Process\tArrival\tBurst" << endl;
+
+    for (const Process& p : processes) {
+        cout << p.id << "\t" << p.arrival << "\t" << p.burst << endl;
+    }
+}
+
 void fcfs(vector<Process>& processes){
     int n = processes.size();
 
@@ -68,6 +77,7 @@ int main() {
         cin>>processes[i].burst;
     }
 
+    printTable(processes);
     fcfs(processes);
     return 0;
 }
